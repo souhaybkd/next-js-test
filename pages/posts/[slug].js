@@ -1,13 +1,17 @@
 import Image from 'next/image'
+import Head from 'next/head'
 
-export default function Post( data ){
+export default function Post(data) {
 
     const post = data.post;
 
     return (
         <div>
+            <Head>
+                <title>{`${post.title}`}</title>
+            </Head>
             <h1>{post.title}</h1>
-            <article dangerouslySetInnerHTML={{__html: post.content}}></article>
+            <article dangerouslySetInnerHTML={{ __html: post.content }}></article>
         </div>
     )
 
